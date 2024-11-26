@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
 
 
 const RESTAURANT = {
@@ -53,16 +53,16 @@ const RESTAURANT = {
 app.set('view engine', 'ejs');
 app.use((req, res, next) => {
   res.locals.restaurant = RESTAURANT; 
-  next(); 
-});
+  next()
+})
 
 
 app.get('/', (req, res) => {
-  res.render('home');
-});
+  res.render('home')
+})
 app.get('/', (req, res) => {
-  //res.send('Hello There!');
-});
+  //res.send('Hello There!')
+})
 
 app.get('/menu', (req, res) => {
   res.render('menu', { menu: res.locals.restaurant.menu })
